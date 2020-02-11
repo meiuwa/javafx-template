@@ -1,0 +1,16 @@
+/* Plugin Resolution Rules (https://docs.gradle.org/current/userguide/plugins.html#sec:plugin_resolution_rules) */
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        jcenter()
+    }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == 'org.javafxports.jfxmobile')
+                useModule("org.javafxports:jfxmobile-plugin:${requested.version}")
+        }
+    }
+}
+
+rootProject.name = 'javafx-template'
+include(':app')

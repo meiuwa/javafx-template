@@ -1,0 +1,15 @@
+/* Top level build script */
+plugins {
+    id 'org.javafxports.jfxmobile' version '1.3.18' apply false
+    id 'com.meiuwa.gradle.sass' version '2.0.0' apply false
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
